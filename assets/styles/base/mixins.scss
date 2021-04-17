@@ -1,0 +1,62 @@
+@mixin mobile {
+  @media screen and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$tablet-max + 1}) {
+    @content;
+  }
+}
+
+@mixin biggerDesktop {
+  @media screen and (min-width: $biggerDesktop-width) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  ::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin paddingCount(
+  $propertyTop,
+  $propertyRight,
+  $propertyBottom,
+  $propertyLeft
+) {
+  padding: $propertyTop * 1% / 3.75 $propertyRight * 1% / 3.75 $propertyBottom *
+    1% / 3.75 $propertyLeft * 1% / 3.75;
+
+  @include tablet {
+    padding: $propertyTop * 1% / 7.68 $propertyRight * 1% / 7.68 $propertyBottom *
+      1% / 7.68 $propertyLeft * 1% / 7.68;
+  }
+
+  @include desktop {
+    padding: $propertyTop * 1% / 19.2 $propertyRight * 1% / 19.2 $propertyBottom *
+      1% / 19.2 $propertyLeft * 1% / 19.2;
+  }
+
+  @include biggerDesktop {
+    padding: $propertyTop * 1% / 19.2 $propertyRight * 1% / 19.2 $propertyBottom *
+      1% / 19.2 $propertyLeft * 1% / 19.2;
+  }
+}
