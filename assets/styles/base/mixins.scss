@@ -35,28 +35,3 @@
   -ms-transform: $property;
   transform: $property;
 }
-
-@mixin paddingCount(
-  $propertyTop,
-  $propertyRight,
-  $propertyBottom,
-  $propertyLeft
-) {
-  padding: $propertyTop * 1% / 3.75 $propertyRight * 1% / 3.75 $propertyBottom *
-    1% / 3.75 $propertyLeft * 1% / 3.75;
-
-  @include tablet {
-    padding: $propertyTop * 1% / 7.68 $propertyRight * 1% / 7.68 $propertyBottom *
-      1% / 7.68 $propertyLeft * 1% / 7.68;
-  }
-
-  @include desktop {
-    padding: $propertyTop * 1% / 19.2 $propertyRight * 1% / 19.2 $propertyBottom *
-      1% / 19.2 $propertyLeft * 1% / 19.2;
-  }
-
-  @include biggerDesktop {
-    padding: $propertyTop * 1% / 19.2 $propertyRight * 1% / 19.2 $propertyBottom *
-      1% / 19.2 $propertyLeft * 1% / 19.2;
-  }
-}
